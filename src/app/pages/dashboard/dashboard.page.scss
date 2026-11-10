@@ -1,0 +1,420 @@
+/* ===== REDISEÑO RUTA: NAVEGACIÓN SUPERIOR ===== */
+
+:host {
+  --ruta-bg: #f3f6f4;
+  --ruta-ink: #17251f;
+  --ruta-muted: #78857e;
+  --ruta-green: #159b63;
+  --ruta-green-dark: #08794b;
+  --ruta-line: #e5ebe7;
+  --ruta-soft: #eaf6ef;
+
+  display: block;
+  color: var(--ruta-ink);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+ion-content {
+  --background: var(--ruta-bg);
+}
+
+/* ENCABEZADO */
+
+.main-toolbar {
+  --background: #fff;
+  --min-height: 72px;
+  --border-color: transparent;
+  --padding-start: clamp(16px, 4vw, 56px);
+  --padding-end: clamp(16px, 4vw, 56px);
+  box-shadow: 0 1px 0 rgba(20, 40, 30, .06);
+}
+
+.logo-mark {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  margin-right: 8px;
+  place-items: center;
+  border-radius: 11px;
+  color: #fff;
+  background: var(--ruta-green);
+}
+
+.logo-dot,
+.heading-point {
+  color: var(--ruta-green);
+}
+
+.user-summary strong {
+  color: var(--ruta-ink);
+}
+
+.user-summary span {
+  color: var(--ruta-muted);
+}
+
+/* CONTENEDOR GENERAL */
+
+.dashboard-shell {
+  display: flex;
+  flex-direction: column;
+  width: min(1500px, 100%);
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 56px) 44px;
+  gap: 28px;
+}
+
+/* NAVEGACIÓN HORIZONTAL */
+
+.desktop-sidebar {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+
+  width: auto;
+  min-height: 70px;
+
+  margin: 0 calc(clamp(16px, 4vw, 56px) * -1);
+  padding: 10px clamp(16px, 4vw, 56px);
+
+  border: 0;
+  border-bottom: 1px solid var(--ruta-line);
+  border-radius: 0;
+
+  background: rgba(255, 255, 255, .96);
+  box-shadow: none;
+  backdrop-filter: blur(14px);
+}
+
+.sidebar-caption {
+  display: none;
+}
+
+.desktop-sidebar::before {
+  content: 'RUTA.';
+
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+
+  margin-right: 16px;
+
+  color: var(--ruta-ink);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: -.5px;
+}
+
+.side-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 40px;
+  padding: 0 13px;
+
+  border: 0;
+  border-radius: 10px;
+
+  color: #69766f;
+  background: transparent;
+
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+
+  transition: .2s ease;
+}
+
+.side-link ion-icon {
+  font-size: 17px;
+}
+
+.side-link:hover,
+.side-link.active {
+  color: var(--ruta-green-dark);
+  background: var(--ruta-soft);
+}
+
+.active-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ruta-green);
+}
+
+.sidebar-note {
+  display: none;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.dashboard-main {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  padding: 0;
+}
+
+.page-heading {
+  margin: 0 0 24px;
+}
+
+.page-heading h1 {
+  color: var(--ruta-ink);
+  font-size: clamp(29px, 4vw, 42px);
+  font-weight: 850;
+  letter-spacing: -1.5px;
+}
+
+.page-heading p {
+  color: var(--ruta-muted);
+}
+
+.eyebrow {
+  color: #89968f;
+  letter-spacing: 1.4px;
+}
+
+.mobile-nav {
+  display: none !important;
+}
+
+/* TARJETAS Y SUPERFICIES */
+
+.stat-tile,
+.surface {
+  border: 1px solid var(--ruta-line);
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 5px 22px rgba(20, 40, 30, .035);
+}
+
+.stat-tile {
+  padding: 20px;
+}
+
+.stat-tile.highlight {
+  border-color: #cde9d8;
+  background: linear-gradient(135deg, #effaf3, #fff);
+}
+
+.stat-tile strong {
+  color: var(--ruta-ink);
+}
+
+.stat-tile.highlight strong {
+  color: var(--ruta-green-dark);
+}
+
+.surface {
+  padding: clamp(18px, 2.5vw, 28px);
+}
+
+.surface-head h2,
+.subheading {
+  color: var(--ruta-ink);
+}
+
+/* BOTONES Y FORMULARIOS */
+
+ion-button {
+  --background: var(--ruta-green);
+  --background-hover: var(--ruta-green-dark);
+  --border-radius: 10px;
+  --box-shadow: none;
+
+  font-weight: 700;
+  text-transform: none;
+}
+
+ion-button[fill="outline"] {
+  --color: var(--ruta-green-dark);
+  --border-color: #cfe4d7;
+}
+
+ion-input,
+ion-textarea,
+ion-select {
+  --border-radius: 10px;
+  --border-color: #e0e8e3;
+  --highlight-color-focused: var(--ruta-green);
+}
+
+/* ESTADOS */
+
+.status-pill {
+  color: var(--ruta-green-dark);
+  background: var(--ruta-soft);
+}
+
+.alert {
+  border-radius: 12px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .dashboard-shell {
+    padding-right: 18px;
+    padding-left: 18px;
+    gap: 20px;
+  }
+
+  .desktop-sidebar {
+    position: relative;
+    top: auto;
+
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    margin-right: -18px;
+    margin-left: -18px;
+
+    padding-right: 18px;
+    padding-left: 18px;
+
+    scrollbar-width: none;
+  }
+
+  .desktop-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .desktop-sidebar::before {
+    margin-right: 8px;
+  }
+
+  .side-link {
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  .dashboard-main {
+    padding: 0;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+  .main-toolbar {
+    --min-height: 62px;
+    --padding-start: 12px;
+    --padding-end: 8px;
+  }
+
+  .user-summary {
+    display: none;
+  }
+
+  .dashboard-shell {
+    padding: 0 12px 30px;
+    gap: 15px;
+  }
+
+  .desktop-sidebar {
+    min-height: 58px;
+
+    margin-right: -12px;
+    margin-left: -12px;
+
+    padding: 8px 12px;
+  }
+
+  .desktop-sidebar::before {
+    font-size: 12px;
+  }
+
+  .side-link {
+    min-height: 36px;
+    gap: 5px;
+    padding: 0 9px;
+    font-size: 10px;
+  }
+
+  .side-link ion-icon {
+    font-size: 14px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    margin-bottom: 17px;
+  }
+
+  .page-heading h1 {
+    font-size: 29px;
+  }
+
+  .page-heading p {
+    font-size: 11px;
+  }
+
+  .stat-grid,
+  .stat-grid.cols-2,
+  .stat-grid.cols-3,
+  .stat-grid.cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .stat-tile {
+    padding: 14px;
+  }
+
+  .stat-tile strong {
+    font-size: 18px;
+  }
+
+  .surface {
+    padding: 16px 13px;
+  }
+
+  .column-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .map-surface {
+    min-height: 340px;
+  }
+
+  .coord-grid,
+  .metric-rows {
+    grid-template-columns: 1fr;
+  }
+
+  .action-row {
+    flex-wrap: wrap;
+  }
+
+  .action-row ion-button {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+
+  .request-row,
+  .driver-row,
+  .fare-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .driver-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+  }
+}

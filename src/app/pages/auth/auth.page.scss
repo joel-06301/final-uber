@@ -1,0 +1,145 @@
+ion-content.login-bg {
+  --background: #f1f5f9;
+}
+
+.login-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Ocultar el panel lateral promocional */
+.auth-brand {
+  display: none;
+}
+
+.auth-main {
+  width: 100%;
+  max-width: 440px;
+}
+
+.login-box {
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  .mobile-logo {
+    display: block;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 16px;
+
+    span {
+      color: #10b981;
+    }
+  }
+}
+
+.api-status {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  margin-bottom: 20px;
+  text-align: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+
+  &.ok {
+    background: #ecfdf5;
+    color: #047857;
+    border-color: #a7f3d0;
+  }
+  &.checking {
+    color: #64748b;
+  }
+  &.db,
+  &.offline {
+    background: #fef2f2;
+    color: #b91c1c;
+    border-color: #fecaca;
+  }
+}
+
+.form-heading {
+  text-align: center;
+  margin-bottom: 24px;
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #10b981;
+    margin-bottom: 4px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 6px 0;
+  }
+
+  p {
+    font-size: 0.88rem;
+    color: #64748b;
+    margin: 0;
+  }
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  ion-input {
+    --background: #f8fafc;
+    --border-color: #cbd5e1;
+    --border-radius: 10px;
+    --padding-start: 14px;
+  }
+}
+
+.form-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.primary-btn {
+  --border-radius: 10px;
+  --background: #0f172a;
+  --background-hover: #1e293b;
+  height: 48px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.switch-note {
+  text-align: center;
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-top: 8px;
+
+  button {
+    background: none;
+    border: none;
+    color: #10b981;
+    font-weight: 700;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+}
+
+.mini-heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  margin-top: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e2e8f0;
+}
